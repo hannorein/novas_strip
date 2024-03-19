@@ -33,7 +33,7 @@
       #include <ctype.h>
    #endif
 
-
+    extern const double AU_KM;
    void nu2000k (double jd_high, double jd_low, double *dpsi, double *deps);
 /*
    Structures
