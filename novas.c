@@ -1808,8 +1808,6 @@ void nutation_angles (double t, short int accuracy,
    under NOTES in the prolog.
 */
 
-   short int low_acc_choice = 1;
-
    double t1;
 
    t1 = t * 36525.0;
@@ -2661,7 +2659,7 @@ short int cio_array (double jd_tdb, long int n_pts,
    the last value of 'n_pts'.
 */
 
-   del_n_pts = abs (n_pts - last_n_pts);
+    del_n_pts = labs (n_pts - last_n_pts);
 
 /*
    Allocate memory for the 't' and 'ra' arrays.
@@ -2724,7 +2722,7 @@ short int cio_array (double jd_tdb, long int n_pts,
 */
 
    del_index = index_rec - last_index_rec;
-   abs_del_index = abs (del_index);
+    abs_del_index = labs (del_index);
 
 /*
    Determine the file read strategy.
@@ -2761,7 +2759,7 @@ short int cio_array (double jd_tdb, long int n_pts,
 
     else if ((abs_del_index <= n_pts) && (del_n_pts == 0))
    {
-      n_swap = abs (n_pts - abs_del_index);
+       n_swap = labs (n_pts - abs_del_index);
       n_read = abs_del_index;
 
 /*
